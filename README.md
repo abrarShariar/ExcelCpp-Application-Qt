@@ -2,7 +2,7 @@
 
 A Software that generates an Excel file (.csv) as output by sorting data from two separate Excel files (.csv) according to conditions mentioned below:
 
-
+<hr>
 **Basic Instructions for running this software**
 
 
@@ -60,6 +60,7 @@ OUTPUT:
 
 	customer_id | Name | Phone | Current_Bill | Due | Total 
 
--------------------------------------------------------------
+
+<em>Note: The platform specific dll files must be located at "../release/platforms/" <br> In this case it is qwindows.dll , since the software is deployed on Windows platform<em>
 
 
