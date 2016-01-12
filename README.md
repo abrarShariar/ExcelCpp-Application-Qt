@@ -1,4 +1,9 @@
-####Basic Instructions for running this software
+##ExcelC++ Application
+
+A Software that generates an Excel file (.csv) as output by sorting data from two separate Excel files (.csv) according to conditions mentioned below:
+
+
+**Basic Instructions for running this software**
 
 
 STEP 1:
