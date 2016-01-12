@@ -157,6 +157,33 @@ map<string,string>mapPhone(vector<string>details){
     return myMap;
 }
 
+
+map<string,string>mapMobile(vector<string>details){
+        map<string,string>myMap;
+        for(int i=0;i<details.size();i++){
+            int start=-1;
+            int commaCount=0;
+           string id=searchId(details[i]);
+           string temp=details[i];
+            string data="";
+            for(int j=0;j<temp.length();j++){
+            if(temp[j]==','){
+                commaCount++;
+                if(commaCount==9){
+                    data=temp.substr(start+1,j-start-1);
+                    break;
+                }
+                start=j;
+                }
+            }
+        myMap[id]=data;
+    }
+    return myMap;
+
+
+
+}
+
 //for reading customers name
 vector<string>getCustomersDetails(string fileName){
     vector<string>customerName;
@@ -284,12 +311,13 @@ int main(){
     vector<string>customerBills=getCustomersBills(customerBillsFile);
     set<string>address=getAddress();
     map<string,string>phoneMap=mapPhone(customerDetails);
+    map<string,string>mobileMap=mapMobile(customerDetails);
 
     bool showAdd=false;
     for(auto it=address.begin();it!=address.end();++it){
         showAdd=false;
             if(it==address.begin()){
-                write<<"Id,Name,Phone,Current_Bill,Due,Total\n"<<endl;
+                write<<"Id,Name,Mobile,Current_Bill,Due,Total\n"<<endl;
             }
         vector<string>addressIdList=getAddressId(*it,customerDetails);      //all id of a particular address
         for(int i=0;i<addressIdList.size();i++){
@@ -302,12 +330,18 @@ int main(){
                     showAdd=true;
                 }
                 //preparing output data
+                string separator="-";
                 string id=searchId(idData);
                 string phone=phoneMap[id];
-                string name=getFullName(id,customerDetails);
+                string mobile=mobileMap[id];
+                if(phone=="" || mobile==""){
+                    separator="";
+                }
 
+                string contact=phone+separator+mobile;
+                string name=getFullName(id,customerDetails);
                 string bill=searchBill(idData);
-                write<<id<<","<<name<<","<<phone<<","<<bill<<endl;
+                write<<id<<","<<name<<","<<contact<<","<<bill<<endl;
             }
         }
     }
