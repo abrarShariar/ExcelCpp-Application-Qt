@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>ExcelCpp-Application-Qt by abrarShariar</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>ExcelCpp-Application-Qt</h1>
+        <p>Release version of ExcelC++ Application . Using Qt (C++) deployed on Windows Desktop. </p>
+
+        <p class="view"><a href="https://github.com/abrarShariar/ExcelCpp-Application-Qt">View the Project on GitHub <small>abrarShariar/ExcelCpp-Application-Qt</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/abrarShariar/ExcelCpp-Application-Qt/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/abrarShariar/ExcelCpp-Application-Qt/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/abrarShariar/ExcelCpp-Application-Qt">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h2>
+<a id="excelc-application" class="anchor" href="#excelc-application" aria-hidden="true"><span class="octicon octicon-link"></span></a>ExcelC++ Application</h2>
+
+<p>A Software that generates an Excel file (.csv) as output by sorting data from two separate Excel files (.csv) according to conditions mentioned below:</p>
+
+<hr>
+
+<p><strong>Basic Instructions for running this software</strong></p>
+
+<p>STEP 1:
+-Unpack the zip folder (ExcelC++ App)</p>
+
+<p>STEP 2:
+-In the main directory you will find the following folders:
+    -Cpp
+    -debug
+    -release
+and some other necessary files</p>
+
+<pre><code>Leave everything untouched
+
+OPEN the folder "release"
+</code></pre>
+
+<p>STEP 3:</p>
+
+<pre><code>-In the "release" folder you will find start.exe
+-Run start.exe
+</code></pre>
+
+<p>STEP 4:
+    CHOOSE CUSTOMER DETAILS FILE:
+    -Use this file chooser to select the customers details file </p>
+
+<pre><code>The details file is supposed to have the follwing columns:(according to order)
+
+customer_id | email | first_name |last_name | customer_currency | account_number | phone | fax | mobile | toll_free | website   | country | province/state | address | city postal_code
+</code></pre>
+
+<p>STEP 5:
+    CHOOSE CUSTOMER BILLS FILE:
+    -Use this file chooser to select the customer bills file</p>
+
+<pre><code>The bills file is supposed to have the follwing columns: (according to order):
+
+customer_id | Current_Bill | Due_Bill | Total
+</code></pre>
+
+<p>OUTPUT:
+    -The output is generated as "data.csv" in the Output folder found in "..release/Output" location</p>
+
+<pre><code>The output shows the following columns grouping customers by Address (according to order):
+
+
+customer_id | Name | Phone | Current_Bill | Due | Total 
+</code></pre>
+
+<p><em>Note: The platform specific dll files must be located at "../release/platforms/" <br> In this case it is qwindows.dll , since the software is deployed on Windows platform<em></em></em></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/abrarShariar">abrarShariar</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
