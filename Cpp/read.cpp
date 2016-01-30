@@ -89,24 +89,6 @@ string searchAdd(string data){
      return temp;
 }
 
-//extract email from data
-string searchEmail(string data){
-    int commaCount=0;
-        int start=-1;
-        string temp;
-        for(int j=0;j<data.length();j++){
-            if(data[j]==','){
-                commaCount++;
-                if(commaCount==2){
-                    temp=data.substr(start+1,j-start-1);
-                    break;
-                }
-                start=j;
-            }
-    }
-     return temp;
-}
-
 //extract first name from data
 string searchFirstName(string data){
      int commaCount=0;
@@ -305,19 +287,6 @@ string getFullName(string id,vector<string>details){
     return fullName;
 }
 
-//set Name=first_name+last_name
-string getEmail(string id,vector<string>details){
-    string email="";
-    for(int i=0;i<details.size();i++){
-            string checkId=searchId(details[i]);
-            if(checkId==id){
-                email=searchEmail(details[i]);
-                break;
-            }
-    }
-    return email;
-}
-
 //clean string
 string cleanString(string text){
     for(int i=0;i<text.length();i++){
@@ -329,7 +298,7 @@ string cleanString(string text){
 }
 
 
-//run program
+//test & trail
 int main(){
     string customerDetailsFile=getDetailsFileName();
     string customerBillsFile=getBillsFileName();
@@ -348,7 +317,7 @@ int main(){
     for(auto it=address.begin();it!=address.end();++it){
         showAdd=false;
             if(it==address.begin()){
-                write<<"Id,Name,Mobile,Email,Current_Bill,Due,Total\n"<<endl;
+                write<<"Id,Name,Mobile,Current_Bill,Due,Total\n"<<endl;
             }
         vector<string>addressIdList=getAddressId(*it,customerDetails);      //all id of a particular address
         for(int i=0;i<addressIdList.size();i++){
@@ -371,14 +340,14 @@ int main(){
 
                 string contact=phone+separator+mobile;
                 string name=getFullName(id,customerDetails);
-                string email=getEmail(id,customerDetails);
                 string bill=searchBill(idData);
-                write<<id<<","<<name<<","<<contact<<","<<email<<","<<bill<<endl;
+                write<<id<<","<<name<<","<<contact<<","<<bill<<endl;
             }
         }
     }
    write.close();
     return 0;
+
 }
 
 
