@@ -1,5 +1,11 @@
 ##[ExcelC++ Application](http://abrarshariar.github.io/ExcelCpp-Application-Qt/)
 
+###Preview
+![app preview](https://raw.githubusercontent.com/abrarShariar/Excel_Qt_interaction/Build/excel.jpg)
+
+
+
+
 A Software that generates an Excel file (.csv) as output by sorting data from two separate Excel files (.csv) according to conditions mentioned below:
 
 <hr>
